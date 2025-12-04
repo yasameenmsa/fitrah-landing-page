@@ -1,0 +1,279 @@
+/* ============================================
+   LAYOUT.CSS - Grid, Containers & Utilities
+   Single Responsibility: Layout structure only
+   ============================================ */
+
+/* ============================================
+   1. CONTAINER
+   ============================================ */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================
+   2. SECTION BASE
+   ============================================ */
+.section {
+    padding: var(--spacing-section) 0;
+    position: relative;
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+
+.section__title {
+    color: var(--color-navy);
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.section__title.text-center::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-primary);
+    margin: 1rem auto 0;
+    border-radius: var(--radius-sm);
+}
+
+.section__subtitle {
+    font-size: 1.25rem;
+    color: var(--color-navy-light);
+    margin-bottom: 1rem;
+    font-weight: var(--font-weight-medium);
+}
+
+.section__text {
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+    line-height: 2;
+}
+
+/* ============================================
+   3. GRID LAYOUTS
+   ============================================ */
+.section__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+.section__grid--reverse {
+    direction: ltr;
+}
+
+.section__grid--reverse>* {
+    direction: rtl;
+}
+
+.section__content {
+    position: relative;
+}
+
+.section__image {
+    position: relative;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+
+.section__image img {
+    width: 100%;
+    height: auto;
+    transition: var(--transition);
+}
+
+.section__image:hover img {
+    transform: scale(1.02);
+}
+
+/* Image Decorative Frame */
+.section__image::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid var(--color-secondary);
+    border-radius: var(--radius-card);
+    z-index: -1;
+    transition: var(--transition);
+}
+
+.section__image:hover::before {
+    top: -10px;
+    right: -10px;
+    border-color: var(--color-primary);
+}
+
+/* ============================================
+   4. GOALS GRID
+   ============================================ */
+.goals__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 3rem;
+}
+
+/* ============================================
+   5. COMPONENTS GRID
+   ============================================ */
+.components__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 3rem;
+}
+
+/* ============================================
+   6. RESPONSIBILITIES GRID
+   ============================================ */
+.responsibilities__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 3rem;
+}
+
+/* ============================================
+   7. REQUIREMENTS GRID
+   ============================================ */
+.requirements__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 3rem;
+}
+
+/* ============================================
+   8. FAMILY GRID
+   ============================================ */
+.family__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    margin-top: 2rem;
+}
+
+.family__boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ============================================
+   9. LIFESTYLE GRID
+   ============================================ */
+.lifestyle__circle {
+    position: relative;
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 60px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+/* ============================================
+   10. FOOTER GRID
+   ============================================ */
+.footer__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* ============================================
+   11. FAQ LIST
+   ============================================ */
+.faq__list {
+    max-width: 900px;
+    margin: 3rem auto 0;
+}
+
+/* ============================================
+   12. FLEX UTILITIES
+   ============================================ */
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.gap-sm {
+    gap: var(--spacing-sm);
+}
+
+.gap-md {
+    gap: var(--spacing-md);
+}
+
+.gap-lg {
+    gap: var(--spacing-lg);
+}
+
+/* ============================================
+   13. SPACING UTILITIES
+   ============================================ */
+.mt-1 {
+    margin-top: 0.5rem;
+}
+
+.mt-2 {
+    margin-top: 1rem;
+}
+
+.mt-3 {
+    margin-top: 1.5rem;
+}
+
+.mt-4 {
+    margin-top: 2rem;
+}
+
+.mb-1 {
+    margin-bottom: 0.5rem;
+}
+
+.mb-2 {
+    margin-bottom: 1rem;
+}
+
+.mb-3 {
+    margin-bottom: 1.5rem;
+}
+
+.mb-4 {
+    margin-bottom: 2rem;
+}
+
+/* ============================================
+   14. SECTION BUTTONS
+   ============================================ */
+.section__buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 2rem;
+}

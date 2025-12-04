@@ -1,0 +1,435 @@
+/* ============================================
+   RESPONSIVE.CSS - All Media Queries
+   Single Responsibility: Responsive design only
+   ============================================ */
+
+/* ============================================
+   1. TABLET BREAKPOINT (1024px)
+   ============================================ */
+@media screen and (max-width: 1024px) {
+    :root {
+        --spacing-section: 80px;
+        --spacing-card: 30px;
+        --fs-display: 48px;
+        --fs-h1: 40px;
+        --fs-h2: 34px;
+    }
+
+    .section__grid {
+        gap: 40px;
+    }
+
+    .goals__grid,
+    .components__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lifestyle__circle {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .family__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero__title {
+        font-size: 48px;
+    }
+}
+
+/* ============================================
+   2. MOBILE BREAKPOINT (767px)
+   ============================================ */
+@media screen and (max-width: 767px) {
+    :root {
+        --fs-display: 36px;
+        --fs-h1: 32px;
+        --fs-h2: 28px;
+        --fs-h3: 24px;
+        --fs-h4: 20px;
+        --fs-body: 16px;
+        --spacing-section: 60px;
+        --spacing-card: 25px;
+    }
+
+    /* Navigation - Mobile Menu */
+    .nav__menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 85%;
+        max-width: 320px;
+        height: 100vh;
+        background: var(--color-white);
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.15);
+        padding: 100px 30px 30px;
+        transition: var(--transition);
+        z-index: 100;
+        overflow-y: auto;
+    }
+
+    .nav__menu.show {
+        right: 0;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .nav__link {
+        font-size: 1.1rem;
+        padding: 10px 0;
+        width: 100%;
+        border-bottom: 1px solid var(--color-bg-lighter);
+    }
+
+    .nav__close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        width: 40px;
+        height: 40px;
+        background: var(--color-bg-lighter);
+        border-radius: var(--radius-circle);
+        font-size: 1.25rem;
+        cursor: pointer;
+        color: var(--color-navy);
+        transition: var(--transition);
+    }
+
+    .nav__close:hover {
+        background: var(--color-primary);
+        color: var(--color-white);
+    }
+
+    .nav__toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    .nav__toggle span {
+        width: 25px;
+        height: 3px;
+        background: var(--color-navy);
+        border-radius: 2px;
+        transition: var(--transition);
+    }
+
+    .nav__toggle:hover span {
+        background: var(--color-primary);
+    }
+
+    .nav__buttons .btn {
+        display: none;
+    }
+
+    /* Hero */
+    .hero {
+        padding-top: 100px;
+        min-height: auto;
+        padding-bottom: 60px;
+    }
+
+    .hero__logo {
+        width: 80px;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero__title {
+        font-size: 36px;
+    }
+
+    .hero__title::after {
+        width: 60px;
+        margin: 1rem auto 0;
+    }
+
+    .hero__subtitle {
+        font-size: 1.15rem;
+    }
+
+    .hero__description {
+        font-size: 1rem;
+    }
+
+    .hero__buttons {
+        flex-direction: column;
+    }
+
+    .hero__buttons .btn {
+        width: 100%;
+    }
+
+    /* Grids */
+    .section__grid,
+    .section__grid--reverse {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .goals__grid,
+    .components__grid,
+    .responsibilities__grid,
+    .requirements__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lifestyle__circle {
+        grid-template-columns: 1fr;
+        padding: 30px 0;
+        gap: 20px;
+    }
+
+    .footer__grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* Section Title Underline */
+    .section__title.text-center::after {
+        width: 50px;
+    }
+
+    /* Quote Box */
+    .quote-box {
+        padding: 25px;
+    }
+
+    .quote-box::before {
+        font-size: 50px;
+        top: 10px;
+        left: 15px;
+    }
+
+    .quote-box--large {
+        padding: 30px 25px;
+    }
+
+    /* Cards */
+    .goal-card {
+        padding: 30px 25px;
+    }
+
+    .goal-card__number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    .goal-card__number::after {
+        width: 75px;
+        height: 75px;
+    }
+
+    .component-card {
+        padding: 25px;
+    }
+
+    .responsibility-card {
+        padding: 25px;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 12px 25px;
+        font-size: 0.95rem;
+        width: 100%;
+    }
+
+    .btn-large {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+
+    .cta__buttons {
+        flex-direction: column;
+    }
+
+    .cta__buttons .btn {
+        width: 100%;
+    }
+
+    /* Section Buttons */
+    .section__buttons,
+    .hero__buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .section__buttons .btn {
+        width: 100%;
+    }
+
+    /* Image Frame */
+    .section__image::before {
+        top: -10px;
+        right: -10px;
+    }
+
+    .section__image:hover::before {
+        top: -7px;
+        right: -7px;
+    }
+
+    /* FAQ */
+    .faq__question {
+        font-size: 1.1rem;
+    }
+
+    .faq__answer {
+        padding-right: 0;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 50px 0 25px;
+    }
+
+    .footer__social {
+        justify-content: center;
+    }
+
+    /* Ambassador */
+    .ambassador__mission p {
+        font-size: 1rem;
+    }
+
+    /* Feature */
+    .feature {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .feature__icon {
+        margin: 0 auto;
+    }
+
+    /* Info Box */
+    .info-box::before {
+        display: none;
+    }
+
+    /* Requirement Box */
+    .requirement-box {
+        padding: 20px;
+    }
+
+    .requirement-box::before {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* ============================================
+   3. SMALL MOBILE BREAKPOINT (480px)
+   ============================================ */
+@media screen and (max-width: 480px) {
+    :root {
+        --fs-display: 32px;
+        --fs-h1: 28px;
+        --fs-h2: 24px;
+        --spacing-section: 50px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .hero__title {
+        font-size: 32px;
+    }
+
+    .goal-card__title,
+    .component-card__title,
+    .responsibility-card__title {
+        font-size: 1.15rem;
+    }
+
+    .quote-text {
+        font-size: 1rem;
+    }
+
+    .nav__menu {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+/* ============================================
+   4. LANDSCAPE MOBILE
+   ============================================ */
+@media screen and (max-width: 767px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 100px 0 50px;
+    }
+
+    .hero__logo {
+        width: 60px;
+    }
+}
+
+/* ============================================
+   5. ACCESSIBILITY - REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* ============================================
+   6. HIGH CONTRAST MODE
+   ============================================ */
+@media (prefers-contrast: high) {
+    :root {
+        --shadow-card: 0 0 0 2px var(--color-navy);
+        --shadow-hover: 0 0 0 3px var(--color-primary);
+    }
+
+    .btn {
+        border-width: 3px;
+    }
+
+    .quote-box,
+    .info-box,
+    .requirement-box {
+        border-width: 3px;
+    }
+}
+
+/* ============================================
+   7. DARK MODE PREFERENCE (FUTURE)
+   ============================================ */
+/* Uncomment when ready to implement dark mode
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg-light: #1a1a1a;
+        --color-bg-lighter: #2d2d2d;
+        --color-white: #121212;
+        --color-navy: #f5f5f5;
+        --color-text: #e0e0e0;
+    }
+}
+*/
